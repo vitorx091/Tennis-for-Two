@@ -104,8 +104,13 @@ function verificaColisaoRaqueteBiblioteca(x, y) {
 
 
 function movimentaRaqueteOpenente(){
-  velocidadeYOponente = yBolinha - yRaqueteOponente - raqueteComprimento /2 - 30;
-  yRaqueteOponente += velocidadeYOponente
+  if(keyIsDown(87)){
+    yRaqueteOponente -= 10;
+  }
+  
+  if(keyIsDown(83)){
+    yRaqueteOponente += 10;
+  }
 }
 
 function incluiPlaca(){
@@ -123,7 +128,7 @@ function incluiPlaca(){
 }
 
 function marcaPonto(){
-  if(xBolinha > 585){
+  if(xBolinha > 593){
     meusPontos += 1;   
     audio.play(); 
   }
